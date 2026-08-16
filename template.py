@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 import logging
 
-logging.basicConfig(level=logging.INFO, format='[%(acstime)s]: %(message)s:')
+logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s:')
 
 project_name = "textSummarizer"
 
@@ -25,7 +25,7 @@ list_of_files = [
     "Dockerfile",
     "requirements.txt",
     "setup.py",
-    "research/trials.ipynb"
+    "research/trials.ipynb",
     "test.py"
 ]
 
@@ -38,7 +38,7 @@ for filepath in list_of_files:
         logging.info(f"Creating directory:{filedir} for the file {filename}")
 
     if (not os.path.exists(filepath)) or (os.path.getsize(filepath) == 0):
-        with open(filepathh,'w') as f:
+        with open(filepath,'w') as f:
             pass
             logging.info(f"Creating empty file: {filepath}")
 
